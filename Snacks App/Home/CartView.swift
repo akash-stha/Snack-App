@@ -140,6 +140,6 @@ struct CardProductCard: View {
                 .cornerRadius(12)
         }
 //        .padding(.vertical, 8)
-//        .padding(.horizontal, 20)
+//        .padding(.horizontal, 20) 
     }
 }
