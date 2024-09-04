@@ -18,7 +18,7 @@ struct ContentView: View {
                     .environmentObject(cartManager)
                 
                 if cartManager.products.count > 0 {
-                    NavigationLink(destination: CartView()) {
+                    NavigationLink(destination: CartView().environmentObject(cartManager)) {
                         HStack(spacing: 22) {
                             Text("\(cartManager.products.count)")
                                 .padding()

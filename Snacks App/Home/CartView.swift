@@ -26,7 +26,7 @@ struct CartView: View {
                         Button {
                             
                         } label: {
-                            Text("3")
+                            Text("\(cartManager.products.count)")
                                 .padding()
                                 .frame(width: 70, height: 90)
                                 .background(.yellow.opacity(0.3))
@@ -50,7 +50,7 @@ struct CartView: View {
                     
                     // MARK: Cart Products
                     VStack(spacing: 20) {
-                        ForEach(productList) { item in
+                        ForEach(cartManager.products, id: \.name) { item in
                             CardProductCard(product: item)
                         }
                     }
@@ -62,7 +62,7 @@ struct CartView: View {
                         HStack {
                             Text("Delivery Amount")
                             Spacer()
-                            Text("$4.00")
+                            Text("Free")
                                 .font(.system(size: 24))
                         }
                         
@@ -71,7 +71,7 @@ struct CartView: View {
                         Text("Total Amount")
                             .font(.system(size: 20))
                         
-                        Text("CAD 38.00")
+                        Text("CAD \(cartManager.total)")
                             .font(.system(size: 36, weight: .semibold))
                     }
                     .padding(30)
